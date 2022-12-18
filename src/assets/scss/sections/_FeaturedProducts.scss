@@ -1,0 +1,24 @@
+.__featured-products {
+  margin-top: 65px;
+
+  & > .container {
+    width: 1110px;
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    & h3 {
+      font-size: $font-size-20;
+      font-weight: $font-weight-bold;
+      margin: auto auto 30px auto;
+    }
+
+    & .products {
+      display: grid;
+      grid-template-columns: repeat(4, 255px);
+      grid-template-rows: repeat(2, 323px);
+      gap: 30px;
+    }
+  }  
+}

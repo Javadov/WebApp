@@ -1,0 +1,65 @@
+.contactus {
+    margin-top: 65px;
+
+    & > .container {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 1110px;
+
+        & span {
+            font-size: $font-size-18;
+            font-weight: $font-weight-bold;
+        }
+
+        & .thankyou {
+            font-size: $font-size-20;
+            font-weight: $font-weight-semibold;
+            color: $color-theme-red;
+        }
+
+        & #commentForm {
+            & .user {
+                display: flex;
+                justify-content: space-between;
+                gap: 30px;
+                margin-top: 30px;
+
+                & .username,
+                & .useremail {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%; 
+
+                    & input {                        
+                        height: 50px;
+                        padding-left: 20px;
+                    }
+                }
+            }
+
+            & .commentbox {
+                margin-top: 30px;
+                
+                & textarea {
+                width: 100%;
+                height: 140px;
+
+                    &::placeholder {
+                        padding: 55px 20px;
+                    }                
+                }
+            }
+
+            & .errorMessage {
+                color: $color-theme-red;
+                font-size: $font-size-14;
+                font-weight: $font-weight-regular;
+            }
+
+            & button {
+                margin-top: 30px;
+            }
+        }
+    }  
+}

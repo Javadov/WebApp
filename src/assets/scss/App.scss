@@ -1,0 +1,33 @@
+//FONTS
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&display=swap');
+
+//GENERAL
+@import './general/variables';
+@import './general/base';
+
+//SECTIONS
+@import './sections/Admin';
+@import './sections/Products';
+@import './sections/NotFound';
+@import './sections/ProductCard';
+@import './sections/ProductDetails';
+
+//PAGES
+@import './sections/Navbar';
+@import './sections/Login';
+@import './sections/Footer';
+@import './sections/ShoppingCart';
+
+//HOME
+@import './sections/Scene';
+@import './sections/Showcase';
+@import './sections/FeaturedProducts';
+@import './sections/ImageBar';
+@import './sections/Speciality';
+@import './sections/SaleBox';
+@import './sections/SelectedProducts';
+@import './sections/InfoBox';
+
+//CONTACT
+@import './sections/ContactForm';

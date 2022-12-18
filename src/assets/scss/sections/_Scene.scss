@@ -1,0 +1,51 @@
+.__scene {
+    background-color: $color-gray-3;
+    
+    
+    & > .container {
+      display: flex ;
+      justify-content: space-between;
+      align-items: center;
+      
+      & .h-b-l {
+        flex: 1;
+        justify-content: left;
+  
+        & img {
+          width: 100%;
+        }
+      }
+      
+      & .h-b-c {
+        flex: 1;
+        text-align: center;
+  
+        & > h1 {
+          text-transform: uppercase;
+          font-size: $font-size-65;
+          font-weight: $font-weight-extrabold;
+          color: $color-theme-red;
+        }
+  
+        & h2 {
+          font-size: $font-size-65;
+          font-weight: $font-weight-extrabold;
+          color: $color-theme-black;
+        }
+  
+        & p {
+          font-size: $font-size-20;
+          font-weight: $font-weight-regular;
+          margin: 1rem 0 2rem 0;
+        }
+      }
+  
+      & .h-b-r {
+        flex: 1;
+  
+        & img {
+          width: 100%;
+        }
+      }
+    }
+}   

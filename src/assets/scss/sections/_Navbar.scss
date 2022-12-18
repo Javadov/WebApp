@@ -1,0 +1,93 @@
+.__navbar {
+    height: 99px;
+    display: flex;
+    align-items: center;
+  
+    & > .container {
+      height: 49px;
+      display: flex ;
+      justify-content: space-between;
+      align-items: center;   
+      
+      & .brand {
+        flex: 1;
+        font-size: $font-size-35;
+        font-weight: $font-weight-bold;
+  
+        & a {
+          text-decoration: none;
+          color: $color-theme-black;
+        }
+      }
+  
+      & .pages {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+  
+        & a {
+          color: $color-theme-black;
+          font-weight: $font-weight-medium;
+          text-decoration: none;
+          margin: 1rem;
+
+          &:hover{
+            color: $color-theme-red;
+            transition:  0.2s all ease-in-out;
+          }
+        }
+
+        & .active {
+          color: $color-theme-red;
+        }
+      }
+  
+      & .iconbar {
+        flex: 1;
+        display: flex;
+        justify-content: right;
+  
+        & .circle {
+          text-decoration: none;
+          color: $color-theme-black;
+          position: relative;
+          background-color: white;
+          border-radius: $border-radius-rounded;
+          width: 36px;
+          height: 36px;
+          margin-left: 2rem;
+          box-shadow: 0 4px 8px 0 $color-gray-4, 0 6px 20px 0 $color-gray-4;
+
+          & i {
+          font-size: $font-size-16;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+
+
+          }
+
+          &:hover {
+            background-color: $color-theme-black;
+
+            & i {
+              color: white;
+            }
+
+          }
+
+          & .notification {
+            background-color: $color-theme-red;
+            font-size: 10px;
+            position: absolute;
+            top: 2px;
+            right: -13px;
+          }
+        }
+
+        & button {
+          border: none;
+        }
+      }
+    }
+}

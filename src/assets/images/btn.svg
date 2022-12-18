@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="188" height="60" viewBox="0 0 188 60">
+  <g id="btn" transform="translate(-575 -2720)">
+    <g id="bg">
+      <rect id="bg-2" data-name="bg" width="188" height="60" transform="translate(575 2720)" fill="#ff7373"/>
+      <path id="Union_1" data-name="Union 1" d="M1847,59h-18V57h18V39h2V59Z" transform="translate(-1096 2711)" fill="#fff"/>
+      <path id="Union_2" data-name="Union 2" d="M1847,59h-18V57h18V39h2V59Z" transform="translate(2434 2789) rotate(180)" fill="#fff"/>
+    </g>
+    <text id="SHOP_NOW" data-name="SHOP NOW" transform="translate(625 2756)" fill="#fff" font-size="16" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="0">SHOP NOW</tspan></text>
+  </g>
+</svg>

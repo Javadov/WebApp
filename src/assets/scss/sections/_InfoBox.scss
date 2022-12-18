@@ -1,0 +1,42 @@
+.info-box {
+    margin-top: 65px;
+  
+    & > .container {
+      display: flex ;
+      justify-content: space-between;
+      justify-content: end;
+      text-align: center;
+      width: 1110px;
+      height: 247px;
+      padding: 0;
+      border-top: 1px solid $color-gray-7;
+  
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+  
+        & .circle {
+          height: 60px;
+          width: 60px;
+          border-radius: $border-radius-rounded;
+          margin-top: 65px;
+          padding-top: 15px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        } 
+    
+        & h1 {
+          font-size: $font-size-20;
+          font-weight: $font-weight-bold;
+        }
+    
+        & p {
+          font-size: $font-size-16;
+          font-weight: $font-weight-regular;
+          color: $color-text;
+          margin: 0;
+        }
+      }  
+    }  
+  }

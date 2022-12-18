@@ -1,0 +1,50 @@
+.speciality {
+  margin-top: 65px;
+
+  & > .container {
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 406px;
+    background-color: $color-gray-0;
+
+    & h3 {
+      font-size: $font-size-20;
+      font-weight: $font-weight-bold;
+      margin: 65px auto 30px auto;
+    }
+
+    & .order-settings {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 65px;
+
+      & .speciality-card {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        width: 490px;
+        height: 232px;
+
+        & .text {
+          flex: 1;
+          margin: auto;
+          padding-left: 34px;
+
+          & h1 {
+            font-size: $font-size-20;
+            font-weight: $font-weight-semibold;
+          }
+
+          & a {
+            color: $color-theme-black;
+            font-size: $font-size-16;
+            font-weight: $font-weight-semibold;
+          }
+        }
+      }
+    }
+  }  
+}

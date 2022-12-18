@@ -1,0 +1,46 @@
+.__admin {
+    margin-top: 65px;
+
+    & > .container {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 1110px;
+
+        & .__manageproducts {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 65px;
+
+            & a {
+                font-size: $font-size-18;
+                font-weight: bold;
+                background-color: $color-theme-red;
+                color: white;
+                text-align: center;
+                height: 50px;
+                width: 280px;
+                border: 1px black solid;
+                border-radius: 5px;
+                padding: 11px;
+            }
+
+            & button {
+                font-size: $font-size-18;
+                font-weight: bold;
+                background-color: green;
+                color: white;
+                text-align: center;
+                height: 50px;
+                width: 280px;
+                border: 1px black solid;
+                border-radius: 5px;
+                padding: 11px;
+            }
+        }
+
+        & .modal-body {
+            color: $color-theme-red;
+        }
+    }  
+}
