@@ -614,6 +614,18 @@ html, body {
   border-radius: 5px;
   padding: 0;
 }
+.__productslist > .container .modal-header ._modal-title {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+}
+.__productslist > .container .modal-header ._modal-title .__modalheader_title {
+  font-size: 18px;
+}
+.__productslist > .container .modal-header ._modal-title .__modalheader_text {
+  font-size: 12px;
+  color: gray;
+}
 .__productslist > .container .modal-body {
   text-align: center;
   color: black;

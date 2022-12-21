@@ -27,7 +27,7 @@ const ProductUpdate:  React.FC<IProductUpdate>  = ({product}) => {
             _price: e.target[12].value,
             _description: e.target[14].value
         }
-        
+
         if (updatedProduct._tag === '') {updatedProduct._tag = product._tag; }
         if (updatedProduct._category === '') {updatedProduct._category = product._category; }
         if (updatedProduct._name === '') {updatedProduct._name = product._name; }
@@ -95,8 +95,8 @@ const ProductUpdate:  React.FC<IProductUpdate>  = ({product}) => {
                 )
                 :                                        
                 (   <div>
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="updateProductLabel">Update selected Product<p>ID: {product._id}</p></h1>
+                        <div className="modal-header  __modalheader">
+                            <div className="modal-title _modal-title fs-5" id="updateProductLabel"><div className="__modalheader_title">Update Selected Product</div><div className="__modalheader_text">ID: {product._id}</div></div>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body __update" >

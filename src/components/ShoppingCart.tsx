@@ -18,11 +18,11 @@ const ShoppingCart: React.FC = () => {
     }, [cartQuantity]);
 
     let total = 0;  
-
     for (let i = 0; i < cartItems.length; i++) {
-        total += cartItems[i].product._price;
+        total += cartItems[i].product._price * cartItems[i].quantity;
     }
 
+    console.log(cartItems)
 
     return (
         <div className="__shoppingcart offcanvas offcanvas-end" tabIndex={-1} id="shoppingCart" aria-labelledby="shoppingCartLabel">
