@@ -28,6 +28,8 @@ const ContactForm: React.FC = () => {
             setErrors({...errors, [id]: validateEmail(id, value)})
     }
 
+    
+
     const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const {id, value} = e.target
         setContactForm({...contactForm, [id]: value})
@@ -61,6 +63,8 @@ const ContactForm: React.FC = () => {
                 }
             }        
     }
+
+    console.log(contactForm)
 
   return (
     <section className="contactus">

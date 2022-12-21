@@ -41,16 +41,19 @@ const UserProvider = ({children} : UserProviderProps) => {
         if (result.status === 201)
             setUserRequest(USERREQUEST_DEFAULT)
     }
+    
     const get = async (id: number) => {
         const result = await fetch(`${baseUrl}/${id}`)
         if (result.status === 200)
             setUser(await result.json())
     }
+
     const getAll = async () =>{
         const result = await fetch(`${baseUrl}`)
         if (result.status === 200)
             setUsers(await result.json())
     }
+
     const update = async (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -65,6 +68,7 @@ const UserProvider = ({children} : UserProviderProps) => {
         if (result.status === 200)
             setUser(await result.json())
     }
+
     const remove = async (id: number) => {
         const result = await fetch(`${baseUrl}/${id}`, {
             method: 'delete',

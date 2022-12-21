@@ -21,7 +21,7 @@ const ShoppingCart: React.FC = () => {
 
     for (let i = 0; i < cartItems.length; i++) {
         total += cartItems[i].product._price;
-      }
+    }
 
 
     return (

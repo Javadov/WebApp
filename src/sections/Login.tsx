@@ -97,7 +97,7 @@ const Login: React.FC = () => {
                         signUpSubmitted ?  
                         (
                             <div> 
-                                <p>Please verify your email</p>
+                                <p className="alert alert-warning text-center">Please verify your email</p>
                             </div>
                         )                     
                         : 

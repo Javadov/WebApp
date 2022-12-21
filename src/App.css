@@ -510,6 +510,30 @@ html, body {
   display: grid;
   margin-top: 10px;
 }
+.__productslist .__rubrik {
+  display: flex;
+}
+.__productslist .__rubrik span {
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #FF7373;
+  color: rgb(253, 246, 246);
+  text-align: center;
+  border: 1px black solid;
+  border-radius: 5px;
+  width: 175px;
+  height: 35px;
+  padding: 5px;
+}
+.__productslist .__rubrik .__smallbox {
+  width: 60px;
+}
+.__productslist .__rubrik .__mediumbox {
+  width: 100px;
+}
+.__productslist .__rubrik .__largebox {
+  width: 290px;
+}
 .__productslist > .container {
   width: 1110px;
   display: flex;
@@ -531,15 +555,16 @@ html, body {
   width: 290px;
 }
 .__productslist > .container .__products span {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: bold;
-  background-color: #FF7373;
-  color: white;
+  background-color: #F8F8F8;
+  color: black;
   text-align: center;
   border: 1px black solid;
   border-radius: 5px;
   width: 175px;
-  padding: 10px;
+  height: 35px;
+  padding: 5px;
 }
 .__productslist > .container .__products span img {
   width: 100px;
@@ -567,7 +592,7 @@ html, body {
   display: inline;
   position: absolute;
   border: 1px solid black;
-  top: 7px;
+  top: 0px;
   left: -210px;
   z-index: 50;
 }
@@ -580,16 +605,46 @@ html, body {
   z-index: 50;
 }
 .__productslist > .container .__products ._extrabutton {
-  font-size: 1.125rem;
   font-weight: bold;
   background-color: green;
   color: white;
-  text-align: center;
-  height: 50px;
+  height: 35px;
   width: 50px;
   border: 1px black solid;
   border-radius: 5px;
-  padding: 11px;
+  padding: 0;
+}
+.__productslist > .container .modal-body {
+  text-align: center;
+  color: black;
+  padding: 30px;
+  font-size: 20px;
+}
+.__productslist > .container .__update {
+  text-align: left;
+  color: black;
+  padding: 30px;
+}
+.__productslist > .container .__update label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  text-align: center;
+}
+.__productslist > .container .__update label p {
+  margin: auto 0 0;
+}
+.__productslist > .container .__update label .actual {
+  text-align: center;
+  font-size: 13px;
+  color: black;
+}
+.__productslist > .container .__update input, .__productslist > .container .__update textarea {
+  width: 437px;
+}
+.__productslist > .container .__delete {
+  background-color: rgb(243, 2, 2);
+  font-weight: bold;
 }
 
 .__notfound {

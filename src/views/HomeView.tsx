@@ -21,15 +21,15 @@ const HomeView: React.FC = () => {
 
   useEffect(() => {
     getFeatured(8)
-  })
+  },[])
 
   useEffect(() => {
     getSquare(4)
-  })
+  },[])
 
   useEffect(() => {
     getTripple(3)
-  })
+  },[])
 
   return (
     <>
