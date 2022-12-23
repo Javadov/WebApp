@@ -12,6 +12,7 @@ export interface IProductContext {
     featured: Product[]
     square: Product[]
     tripple: Product[]
+    refetch: boolean
     getProduct: (articleNumber: string) => void
     getProducts: () => void
     getFeatured: (take?: number) => void
@@ -28,6 +29,7 @@ export const ProductProvider = ({children} : ProductProviderProps) => {
 
     //const url = 'https://win22-webapi.azurewebsites.net/api/products'
 
+    const [refetch, setRefFetch] = useState(true)
     const [product, setProduct] = useState<Product> (EMPTY_PRODUCT)
     const [products, setProducts] = useState<Product[]> ([])
     const [featured, setFeatured] = useState<Product[]> ([])
@@ -44,6 +46,7 @@ export const ProductProvider = ({children} : ProductProviderProps) => {
     const getProducts = async () => {
         const res = await fetch(baseUrl)
         setProducts(await res.json())
+        setRefFetch(!refetch)
     }
     
     const getFeatured = async (take: number = 0) => {
@@ -76,7 +79,7 @@ export const ProductProvider = ({children} : ProductProviderProps) => {
         setTripple(await res.json())
     }
 
-    return <ProductContext.Provider value={{product, products, featured, square, tripple, getProducts, getFeatured, getProduct, getSquare, getTripple}}>
+    return <ProductContext.Provider value={{product, products, featured, square, tripple, refetch, getProducts, getFeatured, getProduct, getSquare, getTripple}}>
         {children}
     </ProductContext.Provider>
 }

@@ -58,7 +58,7 @@ const ProductDelete:  React.FC<IProductDelete> = ({product}) => {
                             Are you sure delete this product?
                         </div>   
                         <div className="modal-footer">
-                            <button  type="button"  className="btn btn-primary __delete" onClick={() => handleDelete(product._id)}>YES, Delete!</button>
+                            <button type="button" className="btn btn-primary __delete" onClick={() => handleDelete(product._id)} data-bs-dismiss="modal">YES, Delete!</button>
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>

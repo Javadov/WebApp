@@ -22,8 +22,6 @@ const ShoppingCart: React.FC = () => {
         total += cartItems[i].product._price * cartItems[i].quantity;
     }
 
-    console.log(cartItems)
-
     return (
         <div className="__shoppingcart offcanvas offcanvas-end" tabIndex={-1} id="shoppingCart" aria-labelledby="shoppingCartLabel">
             <div className="offcanvas-header">

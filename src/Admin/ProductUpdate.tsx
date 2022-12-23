@@ -55,103 +55,80 @@ const ProductUpdate:  React.FC<IProductUpdate>  = ({product}) => {
             setUpdated(false)
             setFailed(true)
         }
-
-        
-        console.log(updatedProduct)
-        console.log(result)
-
-
     }   
+
+    document.getElementById("submitButton")?.addEventListener('click', () => {
+        // update the modal body here
+      });
+      
 
 
 
     return (                                
 
         <form className="modal-content" onSubmit={handleUpdate}>   
-            {   
-                updated ?
-                (
-                    <div>                                            
-                        <div className="modal-body alert alert-success text-center">
-                            <p>Product is updated successfully!</p>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                )
-                :
+            <div>
+                <div className="modal-header  __modalheader">
+                    <div className="modal-title _modal-title fs-5" id="updateProductLabel"><div className="__modalheader_title">Update Selected Product</div><div className="__modalheader_text">ID: {product._id}</div></div>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body __update" >
 
-                failed ?
-                (
-                    <div>                                            
-                        <div className="modal-body alert alert-danger text-center">
-                            <p>Updating product is failed!</p>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div className="d-grid mb-2">
+                        <label htmlFor="product_tag"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateTag" role="button" aria-expanded="false" aria-controls="updateTag">Update Tag</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Tag</button><ul className="dropdown-menu actual">{product._tag}</ul></div></label>
+                        <div className="collapse" id="updateTag">
+                            <select id="product_tag" className="form-select" aria-label="Default select example" >
+                                <option value="" >Select Tag</option>
+                                <option value="featured">featured</option>
+                                <option value="square">square</option>
+                                <option value="tripple">tripple</option>
+                            </select>
                         </div>
                     </div>
-                )
-                :                                        
-                (   <div>
-                        <div className="modal-header  __modalheader">
-                            <div className="modal-title _modal-title fs-5" id="updateProductLabel"><div className="__modalheader_title">Update Selected Product</div><div className="__modalheader_text">ID: {product._id}</div></div>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body __update" >
 
-                            <div className="d-grid mb-2">
-                                <label htmlFor="product_tag"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateTag" role="button" aria-expanded="false" aria-controls="updateTag">Update Tag</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Tag</button><ul className="dropdown-menu actual">{product._tag}</ul></div></label>
-                                <div className="collapse" id="updateTag">
-                                    <select id="product_tag" className="form-select" aria-label="Default select example" >
-                                        <option value="" >Select Tag</option>
-                                        <option value="featured">featured</option>
-                                        <option value="square">square</option>
-                                        <option value="tripple">tripple</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="d-grid mb-2">
-                                <label htmlFor="product_category"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateCategory" role="button" aria-expanded="false" aria-controls="updateCategory">Update Category</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Category</button><ul className="dropdown-menu actual">{product._category}</ul></div></label>
-                                <div className="collapse" id="updateCategory"><input id="product_category"  type="text" placeholder=""/></div>
-                            </div>
-
-                            <div className="d-grid mb-2">
-                                <label htmlFor="product_name"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateName" role="button" aria-expanded="false" aria-controls="updateName">Update Name</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Name</button><ul className="dropdown-menu actual">{product._name}</ul></div></label>
-                                <div className="collapse" id="updateName"><input id="product_name"  type="text" placeholder=""/></div>
-                            </div>
-
-                            <div className="d-grid mb-2">
-                                <label htmlFor="product_image"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateImage" role="button" aria-expanded="false" aria-controls="updateImage">Update Image</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Image</button><ul className="dropdown-menu actual"><img src={product._imageName} className="product-image" alt={product._name} /></ul></div></label>
-                                <div className="collapse" id="updateImage"><input id="product_image"  type="text" placeholder="" /></div>
-                            </div>
-
-                            <div className="d-grid mb-2">
-                                <label htmlFor="product_rating"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateRating" role="button" aria-expanded="false" aria-controls="updateRating">Update Rating</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Rating</button><ul className="dropdown-menu actual">{product._rating}</ul></div></label>
-                                <div className="collapse" id="updateRating"><input id="product_rating"  type="text" placeholder=""/></div>
-                            </div>
-
-                            <div className="d-grid mb-2">
-                                <label htmlFor="product_price"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updatePrice" role="button" aria-expanded="false" aria-controls="updatePrice">Update Price</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Price</button><ul className="dropdown-menu actual">{product._price}</ul></div></label>
-                                <div className="collapse" id="updatePrice"><input id="product_price"  type="text" placeholder=""/></div>
-                            </div>
-
-                            <div className="d-grid mb-2">
-                                <label htmlFor="product_decription"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateDescription" role="button" aria-expanded="false" aria-controls="updateDescription">Update Description</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Description</button><ul className="dropdown-menu actual">{product._description}</ul></div></label>
-                                <div className="collapse" id="updateDescription"><textarea id="product_decription"  placeholder=""/></div>
-                            </div>
-
-                        </div>
-
-                        <div className="modal-footer">
-                            <button type="submit" className="btn btn-success">Update</button>
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
+                    <div className="d-grid mb-2">
+                        <label htmlFor="product_category"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateCategory" role="button" aria-expanded="false" aria-controls="updateCategory">Update Category</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Category</button><ul className="dropdown-menu actual">{product._category}</ul></div></label>
+                        <div className="collapse" id="updateCategory"><input id="product_category"  type="text" placeholder=""/></div>
                     </div>
-                )
-            }
+
+                    <div className="d-grid mb-2">
+                        <label htmlFor="product_name"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateName" role="button" aria-expanded="false" aria-controls="updateName">Update Name</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Name</button><ul className="dropdown-menu actual">{product._name}</ul></div></label>
+                        <div className="collapse" id="updateName"><input id="product_name"  type="text" placeholder=""/></div>
+                    </div>
+
+                    <div className="d-grid mb-2">
+                        <label htmlFor="product_image"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateImage" role="button" aria-expanded="false" aria-controls="updateImage">Update Image</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Image</button><ul className="dropdown-menu actual"><img src={product._imageName} className="product-image" alt={product._name} /></ul></div></label>
+                        <div className="collapse" id="updateImage"><input id="product_image"  type="text" placeholder="" /></div>
+                    </div>
+
+                    <div className="d-grid mb-2">
+                        <label htmlFor="product_rating"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateRating" role="button" aria-expanded="false" aria-controls="updateRating">Update Rating</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Rating</button><ul className="dropdown-menu actual">{product._rating}</ul></div></label>
+                        <div className="collapse" id="updateRating"><input id="product_rating"  type="text" placeholder=""/></div>
+                    </div>
+
+                    <div className="d-grid mb-2">
+                        <label htmlFor="product_price"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updatePrice" role="button" aria-expanded="false" aria-controls="updatePrice">Update Price</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Price</button><ul className="dropdown-menu actual">{product._price}</ul></div></label>
+                        <div className="collapse" id="updatePrice"><input id="product_price"  type="text" placeholder=""/></div>
+                    </div>
+
+                    <div className="d-grid mb-2">
+                        <label htmlFor="product_decription"><a className="btn btn-warning" data-bs-toggle="collapse" href="#updateDescription" role="button" aria-expanded="false" aria-controls="updateDescription">Update Description</a><div className="btn-group dropend"><button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actual Description</button><ul className="dropdown-menu actual">{product._description}</ul></div></label>
+                        <div className="collapse" id="updateDescription"><textarea id="product_decription"  placeholder=""/></div>
+                    </div>
+
+                </div>
+                {   
+                    updated ?  (<div className="modal-body alert alert-success text-center">Product is updated successfully!</div>) : (<></>)
+                }
+                {   
+                    failed ?   (<div className="modal-body alert alert-danger text-center">Creating product is failed!</div>) : (<></>)
+                }
+
+                <div className="modal-footer">
+                    <button type="submit" className="btn btn-success" id="submitButton">Update</button>
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </form>
       
     )

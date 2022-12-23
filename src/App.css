@@ -505,6 +505,19 @@ html, body {
 .__admin > .container .modal-body {
   color: #FF7373;
 }
+.__admin > .container .__userpanel {
+  display: flex;
+  text-align: center;
+  text-decoration: none;
+  padding: auto;
+}
+.__admin > .container .__userpanel span {
+  font-weight: bold;
+  margin: auto;
+}
+.__admin > .container .btn {
+  border: 1px solid black;
+}
 
 .__productslist {
   display: grid;
@@ -1507,6 +1520,16 @@ html, body {
 }
 .__mobile-login .card-back {
   transform: rotateY(180deg);
+}
+.__mobile-login .__hidden {
+  display: none;
+}
+.__mobile-login .__signedup .__hidden {
+  display: none;
+}
+.__mobile-login .__signedup label {
+  color: red;
+  margin-left: 5px;
 }
 .__mobile-login .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
   transform: rotateY(180deg);

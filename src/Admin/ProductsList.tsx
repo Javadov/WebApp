@@ -13,11 +13,11 @@ interface IProductsList {
 
 const ProductsList: React.FC<IProductsList> = ({product}) => {
 
-    const {products, getProducts} = useProductContext() as IProductContext 
+    const { refetch, products, getProducts} = useProductContext() as IProductContext 
 
     useEffect(() => {
         getProducts()
-    }, [])
+    }, [refetch])
 
     const [deleted, setDeleted] = useState<boolean>(false)
     const [failed, setFailed] = useState<boolean>(false)

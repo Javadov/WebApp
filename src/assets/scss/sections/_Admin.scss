@@ -42,5 +42,22 @@
         & .modal-body {
             color: $color-theme-red;
         }
+
+        & .__userpanel {
+            display: flex;
+            text-align: center;
+            text-decoration: none;
+            padding: auto;
+
+            & span {
+                font-weight: bold;
+                margin: auto;
+            }
+
+        }
+
+        & .btn {
+            border: 1px solid black;
+        }
     }  
 }

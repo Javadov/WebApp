@@ -158,6 +158,23 @@
       
       .card-back {
         transform: rotateY(180deg);
+
+      }
+      
+      .__hidden {        
+        display: none;
+      }
+
+      .__signedup{
+
+        .__hidden {        
+          display: none;
+        }
+
+        & label {        
+          color: red;
+          margin-left: 5px;
+        }
       }
       
       .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
