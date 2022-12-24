@@ -46,7 +46,7 @@ const Login: React.FC = () => {
         const data = await result.json()
         localStorage.setItem(`accessToken`, data.accessToken)
 
-        if (result.status === 200 && localStorage.accessToken !== null) {
+        if (result.status === 200) {
             setSignInSubmitted(true)
             setLoginForm(DEFAULT_VALUE)
         } else {
@@ -76,7 +76,6 @@ const Login: React.FC = () => {
         })
     
         const data = await result.json()
-        console.log(data)
 
         if (result.status === 201) {
             setSignUpSubmitted(true)
@@ -91,7 +90,7 @@ const Login: React.FC = () => {
     <section className="__mobile-login">
         <div className="container">
             <div className="row full-height justify-content-center">
-                <div className="col-12 text-center align-self-center py-5">
+                <div className="col-12 text-center align-self-center">
                     {   
                         token ?
                         (

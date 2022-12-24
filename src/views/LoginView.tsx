@@ -8,7 +8,7 @@ const CompareView = () => {
   return (
     <>
         <Navbar />
-        <Breadcrumb currentPage="Login" />
+        <Breadcrumb currentPage="Userpage" />
         <Login />
         <div style={{width: "100%", position: "relative", bottom: "0"}}>
         <Footer />

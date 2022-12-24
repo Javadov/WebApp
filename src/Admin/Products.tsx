@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Breadcrumb from '../components/Breadcrumb'
-import ProductCard from '../components/ProductCard'
 import ProductsList from './ProductsList'
-import {ProductContext, IProductContext, useProductContext } from '../contexts/ProductContext'
+import { IProductContext, useProductContext } from '../contexts/ProductContext'
 import Footer from '../sections/Footer'
 import Navbar from '../sections/Navbar'
+import NoWay from '../sections/NoWay'
 
 interface ICreate {
   _tag: string
@@ -30,6 +30,11 @@ const AddProduct: React.FC = () => {
     const [CreateForm, setCreateForm] = useState<ICreate>(DEFAULT_VALUE)
     const [created, setCreated] = useState<boolean>(false)
     const [failed, setFailed] = useState<boolean>(false)
+    const [token, setToken] = useState(null)
+
+    useEffect(() => {
+        setToken(localStorage.accessToken);
+    }, []);
 
     const handleCreate = async (e: any) => {
       e.preventDefault()
@@ -58,7 +63,6 @@ const AddProduct: React.FC = () => {
       })  
       
       const data = await result.json()
-      console.log(data.accessToken)
       localStorage.setItem(`accessToken`, data.accessToken)
 
       if (result.status === 201) {
@@ -74,91 +78,102 @@ const AddProduct: React.FC = () => {
     return (
         <>
             <Navbar />
-            <Breadcrumb currentPage="Manage Products" />
 
-                <div className="__admin"> 
-                    <div className="container">
-                        <div className="__manageproducts">
-                            <a className="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">MANAGE PRODUCTS</a>
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                Add Product
-                            </button>
-                        </div>
-                        <div className="__productslist collapse" id="collapseExample">
-                          <div className="__rubrik" >
-                            <span className="__smallbox">ID</span>
-                            <span className="__mediumbox">Tag</span>
-                            <span className="__mediumbox">Category</span>
-                            <span className="__largebox">Product Name</span>
-                            <span className="__largebox">Product Image</span>
-                            <span className="__smallbox">Rating</span>
-                            <span className="__smallbox">Price</span>
-                            <span className="__mediumbox">Description</span>
-                          </div>
+            {
+                token ?
+                (
+                    <>
+                    <Breadcrumb currentPage="Manage Products" />
+                        <div className="__admin"> 
+                        <div className="container">
+                            <div className="__manageproducts">
+                                <a className="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">MANAGE PRODUCTS</a>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    Add Product
+                                </button>
+                            </div>
+                            <div className="__productslist collapse" id="collapseExample">
+                            <div className="__rubrik" >
+                                <span className="__smallbox">ID</span>
+                                <span className="__mediumbox">Tag</span>
+                                <span className="__mediumbox">Category</span>
+                                <span className="__largebox">Product Name</span>
+                                <span className="__largebox">Product Image</span>
+                                <span className="__smallbox">Rating</span>
+                                <span className="__smallbox">Price</span>
+                                <span className="__mediumbox">Description</span>
+                            </div>
 
-                            {
-                                products.map( product => <ProductsList key={product._id} product={product} />)
-                            }
-                        </div>
-                        
-                        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <form className="modal-dialog" onSubmit={handleCreate}>
-                                <div className="modal-content">
-                                    <div className="modal-header">
-                                        <h1 className="modal-title fs-5" id="staticBackdropLabel">Add a new Product</h1>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div className="modal-body">
+                                {
+                                    products.map( product => <ProductsList key={product._id} product={product} />)
+                                }
+                            </div>
+                            
+                            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <form className="modal-dialog" onSubmit={handleCreate}>
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h1 className="modal-title fs-5" id="staticBackdropLabel">Add a new Product</h1>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div className="modal-body">
 
-                                        <div className="d-grid mb-2">
-                                            <label htmlFor="product_tag">Tag <span className="required">*</span></label>
-                                            <select id="product_tag" className="form-select" aria-label="Default select example">
-                                              <option value="" >Select Tag</option>
-                                              <option value="featured">featured</option>
-                                              <option value="square">square</option>
-                                              <option value="tripple">tripple</option>
-                                            </select>
+                                            <div className="d-grid mb-2">
+                                                <label htmlFor="product_tag">Tag <span className="required">*</span></label>
+                                                <select id="product_tag" className="form-select" aria-label="Default select example">
+                                                <option value="" >Select Tag</option>
+                                                <option value="featured">featured</option>
+                                                <option value="square">square</option>
+                                                <option value="tripple">tripple</option>
+                                                </select>
+                                            </div>
+                                            <div className="d-grid mb-2">
+                                                <label htmlFor="product_category">Category <span className="required">*</span></label>
+                                                <input id="product_category"  type="text" placeholder="" required />
+                                            </div>
+                                            <div className="d-grid mb-2">
+                                                <label htmlFor="product_name">Product name  <span className="required">*</span></label>
+                                                <input id="product_name"  type="text" placeholder="" required />
+                                            </div>
+                                            <div className="d-grid mb-2">
+                                                <label htmlFor="product_image">Product image link <span className="required">*</span></label>
+                                                <input id="product_image"  type="text" placeholder="" required />
+                                            </div>
+                                            <div className="d-grid mb-2">
+                                                <label htmlFor="product_rating">Rating <span className="required">*</span></label>
+                                                <input id="product_rating"  type="text" placeholder="" required />
+                                            </div>
+                                            <div className="d-grid mb-2">
+                                                <label htmlFor="product_price">Price <span className="required">*</span></label>
+                                                <input id="product_price"  type="text" placeholder="" required />
+                                            </div>
+                                            <div className="d-grid mb-2">
+                                                <label htmlFor="product_decription">Decription</label>
+                                                <textarea id="product_decription"  placeholder=""/>
+                                            </div>
                                         </div>
-                                        <div className="d-grid mb-2">
-                                            <label htmlFor="product_category">Category <span className="required">*</span></label>
-                                            <input id="product_category"  type="text" placeholder="" required />
-                                        </div>
-                                        <div className="d-grid mb-2">
-                                            <label htmlFor="product_name">Product name  <span className="required">*</span></label>
-                                            <input id="product_name"  type="text" placeholder="" required />
-                                        </div>
-                                        <div className="d-grid mb-2">
-                                            <label htmlFor="product_image">Product image link <span className="required">*</span></label>
-                                            <input id="product_image"  type="text" placeholder="" required />
-                                        </div>
-                                        <div className="d-grid mb-2">
-                                            <label htmlFor="product_rating">Rating <span className="required">*</span></label>
-                                            <input id="product_rating"  type="text" placeholder="" required />
-                                        </div>
-                                        <div className="d-grid mb-2">
-                                            <label htmlFor="product_price">Price <span className="required">*</span></label>
-                                            <input id="product_price"  type="text" placeholder="" required />
-                                        </div>
-                                        <div className="d-grid mb-2">
-                                            <label htmlFor="product_decription">Decription</label>
-                                            <textarea id="product_decription"  placeholder=""/>
+                                        {   
+                                            created ?  (<div className="modal-body alert alert-success text-center">Product is added successfully!</div>) : (<></>)
+                                        }
+                                        {   
+                                            failed ?   (<div className="modal-body alert alert-danger text-center">Creating product is failed!</div>) : (<></>)
+                                        }
+                                        <div className="modal-footer">
+                                            <button type="submit" className="btn btn-primary">Create</button>
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </div>
-                                      {   
-                                          created ?  (<div className="modal-body alert alert-success text-center">Product is added successfully!</div>) : (<></>)
-                                      }
-                                      {   
-                                          failed ?   (<div className="modal-body alert alert-danger text-center">Creating product is failed!</div>) : (<></>)
-                                      }
-                                    <div className="modal-footer">
-                                        <button type="submit" className="btn btn-primary">Create</button>
-                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>  
-                </div>
+                                </form>
+                            </div>
+                        </div>  
+                    </div>
+                </>
+                )                     
+                : 
+                (
+                    <NoWay />
+                )
+            }
             <Footer />
         </>
     ) 

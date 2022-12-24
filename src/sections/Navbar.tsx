@@ -19,8 +19,8 @@ const { cartQuantity } = useShoppingCart() as IShoppingCart
                 <NavLink className="__pagelink" to="/contacts" end>Contacts</NavLink>
             </div>
             <div className="iconbar">
-                <MenuIcon link="/search" icon="fa-regular fa-magnifying-glass" end/>
                 <MenuIcon link="/login" icon="fa-regular fa-user-bounty-hunter" end/>
+                <MenuIcon link="/search" icon="fa-regular fa-magnifying-glass" end/>
                 <MenuIcon link="/wishlist" icon="fa-regular fa-heart" wished="3" end/>
                 <button className="circle" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
                     <i className="fa-regular fa-shopping-bag"></i>

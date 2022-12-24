@@ -2,49 +2,49 @@
     height: 1100px;
 
     .card-login {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: left;
-        background-color: $color-theme-red;
-        border-radius: 8px;
-        width: 100%;
-        padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: left;
+      background-color: $color-theme-red;
+      border-radius: 8px;
+      width: 100%;
+      padding: 2rem;
 
-        & h4 {
-            margin-bottom: 2rem;
-        }
+      & h4 {
+          margin-bottom: 2rem;
+      }
 
-        & .password-settings a {
-            color: $color-theme-dark;
-            font-weight: bold;
-            text-decoration: none;
+      & .password-settings a {
+          color: $color-gray-6;
+          font-weight: bold;
+          text-decoration: none;
 
-            &:hover {
-                color: $color-theme-dark;
-                text-decoration: underline;
-            }
-        }
+          &:hover {
+              color: $color-theme-dark;
+              text-decoration: underline;
+          }
+      }
 
-        & .card-text-small {
-            font-size: 14px;
-            color: #777777;
-        }
+      & .card-text-small {
+          font-size: 14px;
+          color: #777777;
+      }
 
-        & .card-text-medium {
-            color: $color-theme-dark;
+      & .card-text-medium {
+          color: $color-theme-dark;
 
-            & a {
-                color: $color-theme-red;
-                font-weight: bold;
-                text-decoration: none;
+          & a {
+              color: $color-theme-red;
+              font-weight: bold;
+              text-decoration: none;
 
-                &:hover {
-                    color: $color-theme-dark;
-                    text-decoration: underline;
-                }
-            }
-        }
+              &:hover {
+                  color: $color-theme-dark;
+                  text-decoration: underline;
+              }
+          }
+      }
 
     }
 

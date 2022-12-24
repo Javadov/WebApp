@@ -4,6 +4,7 @@ import ShoppingCartItem from '../components/ShoppingCartItem'
 import { NavLink } from 'react-router-dom'
 import { currencyFormater } from '../utilities/currencyFormat'
 
+
 const ShoppingCart: React.FC = () => {
     const {cartItems , cartQuantity} = useShoppingCart() as IShoppingCart
 
@@ -21,6 +22,11 @@ const ShoppingCart: React.FC = () => {
     for (let i = 0; i < cartItems.length; i++) {
         total += cartItems[i].product._price * cartItems[i].quantity;
     }
+      
+    const offcanvas = () => {
+        window.location.href = '/mybag';
+    }
+
 
     return (
         <div className="__shoppingcart offcanvas offcanvas-end" tabIndex={-1} id="shoppingCart" aria-labelledby="shoppingCartLabel">
@@ -39,7 +45,7 @@ const ShoppingCart: React.FC = () => {
                             } 
                             </div>
                             <div className="checkout">
-                                <NavLink to="/mybag" className="d-flex j-c a-i alert alert-success text-center"><div>CHECKOUT</div> <div>Total: {currencyFormater(total)}</div></NavLink>
+                                <NavLink to="/mybag" className="d-flex j-c a-i alert alert-success text-center" data-bs-dismiss="offcanvas"><div>CHECKOUT</div> <div>Total: {currencyFormater(total)}</div></NavLink>
                             </div>   
                         </div>
 

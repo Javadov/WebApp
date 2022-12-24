@@ -15,11 +15,11 @@ import { IProductContext, useProductContext } from '../contexts/ProductContext';
 
 const ProductDetails: React.FC<Product> = () => {
 
-    const {products, getProducts} = useProductContext() as IProductContext 
+    const {refetch, products, getProducts} = useProductContext() as IProductContext 
 
     useEffect(() => {
         getProducts()
-    }, [])
+    }, [refetch])
 
     const EMPTY_PRODUCT: Product = { _tag: '', _id: '', _imageName: '', _name: '', _category: '', _description: '', _rating: 0, _price: 0, _quantity: 0}
 
@@ -32,7 +32,7 @@ const ProductDetails: React.FC<Product> = () => {
             setProduct(await result.json())
         }
         fetchData()
-    }, [])    
+    }, [refetch])    
 
     const { cartItems } = useShoppingCart() as IShoppingCart
 
@@ -70,7 +70,7 @@ const ProductDetails: React.FC<Product> = () => {
                             <p>SKU: 12345670</p> <p>Category: {product._category}</p>
                         </div>
 
-                        <HalfRating value={product._rating}/>                        
+                        <HalfRating />                        
 
                         <h2>$ {product._price}</h2>
                         <p>Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. <a href="#">(read more)</a></p>
